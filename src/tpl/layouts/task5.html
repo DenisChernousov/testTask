@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    {{> head }}
+</head>
+
+<header>
+
+
+</header>
+
+<body>
+    <div class="progress">
+        <div class="fill run"></div>
+
+    </div>
+    <button id="startBtn" class="btn">Click</button>
+    <input type="number" id="fillInp">
+</body>
+<script>
+    const buttonFill = document.getElementById('startBtn')
+    const fill = document.querySelector(".fill")
+
+    function handleClickFill() {
+
+        let inpFill = document.getElementById('fillInp').value;
+
+        fill.style.setProperty('--pr', inpFill + '%')
+        fill.classList.add('run')
+        buttonFill.classList.add('off')
+        setTimeout(() => fill.classList.remove('run'), 2000);
+        setTimeout(() => buttonFill.classList.remove('off'), 2000);
+
+    }
+
+    buttonFill.addEventListener('click', handleClickFill)
+
+</script>
+
+</html>

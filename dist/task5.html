@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <!-- Useful meta tags -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta content="width=1140" name="viewport" id="viewport"> -->
+    <meta name="robots" content="index, follow, noodp">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google" content="notranslate">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>task 5</title>
+</head>
+
+<header>
+
+
+</header>
+
+<body>
+    <div class="progress">
+        <div class="fill run"></div>
+
+    </div>
+    <button id="startBtn" class="btn">Click</button>
+    <input type="number" id="fillInp">
+</body>
+<script>
+    const buttonFill = document.getElementById('startBtn')
+    const fill = document.querySelector(".fill")
+
+    function handleClickFill() {
+
+        let inpFill = document.getElementById('fillInp').value;
+
+        fill.style.setProperty('--pr', inpFill + '%')
+        fill.classList.add('run')
+        buttonFill.classList.add('off')
+        setTimeout(() => fill.classList.remove('run'), 2000);
+        setTimeout(() => buttonFill.classList.remove('off'), 2000);
+
+    }
+
+    buttonFill.addEventListener('click', handleClickFill)
+
+</script>
+
+</html>
